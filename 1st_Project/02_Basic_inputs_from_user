@@ -1,0 +1,49 @@
+Learning to take basic user input for the project--
+
+PYTHON------------------------------------------------------
+
+# We have to verify that the input is a number or a string-
+
+    # isdigit() Method -
+
+val = '10'
+
+print(val.isdigit())
+print(int(val))
+#using this method in a function
+#creating a func whcih knows if the input is string or not;
+#also, if it is in range or not !
+
+def user_input():
+    #initialization
+    choice='Hah'
+    defined_range= range(0,11)
+    within_range= False
+    
+    while (choice.isdigit()==False) or (within_range==False):
+        
+        
+        choice= input("INPUT A NUMBER B/W 0 TO 10: ")
+        
+        # CHECKING STRING 
+        if choice.isdigit()==False:
+            print("Sorry! Not a digit; kindly re-enter the value- ")
+        
+        '''Note that 
+            we can also use 
+                        not in [] method to check the data
+                                but it is efficient if we already know the number of elements in a list.'''
+        # CHECKING RANGE
+        if choice.isdigit()==True:
+            if int(choice) in defined_range:
+                within_range= True
+            else:
+                print("Sorry! YOU are out of Range ")
+                within_range=False
+    return int(choice)
+
+    
+
+print(user_input())
+
+
